@@ -25,8 +25,7 @@ print("Debug:", num)
 won = False
 guesses = 0
 while not won:
-    u = input("Enter your 4 digit guess: ")
-    u = str(u)
+    u = str(input("Enter your 4 digit guess: "))
     if len(u) < 4 or len(u) > 4:
         print("Your guess must be 4 digits")
         continue

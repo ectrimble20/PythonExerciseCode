@@ -17,7 +17,8 @@ o_list = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 print("Elements that are less than 5, individually:")
 for i in o_list:
     if i < 5:
-        print(i, "is less than 5")
+        print("{} is less than 5".format(i))
+        # print(i, "is less than 5")
 
 print("\n\n")
 print("New List with elements less than 5:")
@@ -33,8 +34,8 @@ print("[i for i in o_list if i < 5]")
 print([i for i in o_list if i < 5])
 
 print("Ask user for input and print list of less than input:")
-num = input("Please enter a number: ")
-num = int(num)
+num = int(input("Please enter a number: "))
+# num = int(num)
 print([i for i in o_list if i < num])
 
 print("\n\nAll done!")

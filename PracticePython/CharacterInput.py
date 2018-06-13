@@ -1,3 +1,4 @@
+from datetime import date
 # CharacterInput.py
 """
 Create a program that asks the user to enter their name and their age.
@@ -9,19 +10,19 @@ from the previous task by N times
 2 - from task 1, print the message on a new line
 """
 
-name = input("Welcome! Please enter you name:")
-name = str(name)
-age = input("Thanks " + name + ", say... how old are you? ")
-age = int(age)
+name = str(input("Welcome! Please enter you name:"))
+age = int(input("Thanks " + name + ", say... how old are you? "))
 
-year_100 = (2018 - age) + 100
+# adding this so that this program works no matter what year it is
+this_year = date.today().year
+
+year_100 = (this_year - age) + 100
 year_99 = year_100 - 1
 msg = "Wow, well depending on what month you were born, you'll be 100 in", year_100, "or", year_99
 print(msg)
 
 
-repeat = input("Hey, enter a number between 1-5, or w/e it's a surprise what I'm going to do: ")
-repeat = int(repeat)
+repeat = int(input("Hey, enter a number between 1-5, or w/e it's a surprise what I'm going to do: "))
 print(msg * repeat)
 print("Pretty neat huh?  Okay, I'm going to do the same thing but on diff lines now")
 for n in range(repeat):

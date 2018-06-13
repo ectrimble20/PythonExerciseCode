@@ -18,4 +18,10 @@ def reverse_words(str_of_words):
 
 
 user_input = input("Type a string with multiple words: ")
+# >:( I ain't even fixing this one
 print(reverse_words(str(user_input)))
+
+# single liner cuz why not
+user_input = " ".join(user_input.split(" ")[::-1])
+print(f"{user_input}")
+# this walks the string in reverse using list splitting and returns a reversed string

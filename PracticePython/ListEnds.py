@@ -20,3 +20,7 @@ b = first_and_last(c_a)
 
 print("A:", a)
 print("B:", b)
+
+# one liner pewpew
+c = [a[0], a[-1]]
+print("C: {}".format(c))

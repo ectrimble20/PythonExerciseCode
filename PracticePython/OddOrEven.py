@@ -8,8 +8,8 @@ Extras:
 divides evenly into num, tell that to the user, if not print a different message
 """
 
-num = input("Enter a number: ")
-num = int(num)
+num = int(input("Enter a number: "))
+# num = int(num)  # still haven't figured out my obsession with not just wrapping input()
 
 # check Extra #1 condition
 if num % 4 == 0:
@@ -21,10 +21,10 @@ else:
         print("You've entered an odd number")
 
 # extra part two
-n = input("Please enter another number: ")
-n = int(n)
-check = input("Enter a check number: ")
-check = int(check)
+n = int(input("Please enter another number: "))
+# n = int(n)  # see
+check = int(input("Enter a check number: "))
+# check = int(check) # like, why Eric?  Just wrap the damn inputs
 
 if n % check == 0:
     print("The numbers you've entered divide evenly")

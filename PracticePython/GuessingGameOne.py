@@ -17,8 +17,8 @@ r_num = random.randint(0, 9)
 guesses = 0
 guess_text = "guesses"
 while True:
-    u_in = input("Enter your guess:")
-    u_in = int(u_in)
+    u_in = int(input("Enter your guess:"))
+    # u_in = int(u_in)
     guesses += 1
     if u_in == r_num:
         if guesses == 1:

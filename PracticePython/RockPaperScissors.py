@@ -13,22 +13,37 @@ Rules:
 def get_user_y_or_n():
     while True:
         user_input = input("(Y)es or (N)o:")
-        user_input = str(user_input).lower()
+        if user_input not in "YyNn":
+            print("Please respond with (y)es or (n)o.")  # a little politeness goes a long way
+        else:
+            return user_input.lower()
+        """
+        user_input = str(input("(Y)es or (N)o:")).lower()
+        # user_input = str(user_input).lower()
         if user_input not in ['y', 'n']:
-            print("Yes or No FOOL try AGAAAAINNNN")
+            print("Please respond with (y)es or (n)o.")  # a little politeness goes a long way
+            # print("Yes or No FOOL try AGAAAAINNNN")
         else:
             return user_input
+        """
 
 
 def get_user_selection():
     print("(R)ock, (P)aper, or (S)issor")
     while True:
         user_input = input("Enter Selection: ")
+        if user_input not in "RrPpSs":
+            print("Please enter a valid selection: (R)ock, (P)aper, or (S)issor")
+        else:
+            return user_input.lower()
+        """
+        user_input = input("Enter Selection: ")
         user_input = str(user_input).lower()
         if user_input not in ['r', 'p', 's']:
             print("Please enter a valid selection")
         else:
             return user_input
+        """
 
 
 def who_won(p1, p2):
@@ -54,6 +69,7 @@ def who_won(p1, p2):
 
 
 game_running = True
+# I'm uncertain, but I'm pretty sure I was highly caffinated while writing this part.
 while game_running:
     print("Rock Paper Scissors!!!! MOST AWESOME GAME EVVVVAAAARRRRR\n\n")
     print("BEGIN!!!!\n\n")

@@ -11,18 +11,22 @@ Use binary search.
 """
 
 elements = random.randint(40, 100)
+e_list = list(set([random.randint(0, 100) for n in range(0, elements)]))
+"""
 e_list = []
 for _ in range(0, elements):
     n = random.randint(0, 100)
     e_list.append(n)
-
 e_list = list(set(e_list))  # convert and sort
+"""
 e_list.sort()  # make sure it's sorted
 
 s_element = random.randint(0, len(e_list))
 
-print("Random List:", e_list)
-print("Random element:", s_element, "Value: ", e_list[s_element])
+# print("Random List:", e_list)
+print("Random List: {}".format(e_list))
+# print("Random element:", s_element, "Value: ", e_list[s_element])
+print("Random element: {} => Value: {}".format(s_element, e_list[s_element]))
 
 
 def binary_search(search_for: int, search_in: list) -> object:
@@ -45,13 +49,13 @@ def binary_search(search_for: int, search_in: list) -> object:
     l = 0
     r = len(search_in) - 1
     while True:
-        print("Debug:step:L:R:", step, l, r)
+        # print("Debug:step:L:R:", step, l, r)
         step += 1
         if l > r:
             print("l > r, no result")
             return -1
         m = (l + r) // 2
-        print("M::", m)
+        # print("M::", m)
         # Start binary search
         if search_in[m] == search_for:
             return m
@@ -63,6 +67,8 @@ def binary_search(search_for: int, search_in: list) -> object:
 
 res = binary_search(s_element, e_list)
 if res is not -1:
-    print("Found", s_element, "at index", res)
+    print("Found {} at index {}".format(s_element, res))
+    # print("Found", s_element, "at index", res)
 else:
-    print("Did not find", s_element, "in the list")
+    print("Did not find {} in the list".format(s_element))
+    # print("Did not find", s_element, "in the list")

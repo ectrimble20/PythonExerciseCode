@@ -18,6 +18,8 @@ alpha_upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'M', 'N', 'P', 
 numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 special = ['@', '#', '$', '%', '&']
 
+# FYI, just use a string, you can iterate a string exactly like a list.
+
 strong = {'alpha_l': 3, 'alpha_u': 2, 'numbers': 3, 'special': 2, 'length': 10}
 medium = {'alpha_l': 3, 'alpha_u': 2, 'numbers': 2, 'special': 1, 'length': 8}
 weak = {'alpha_l': 3, 'alpha_u': 2, 'numbers': 1, 'special': 0, 'length': 6}
@@ -25,8 +27,8 @@ weak = {'alpha_l': 3, 'alpha_u': 2, 'numbers': 1, 'special': 0, 'length': 6}
 
 def get_user_choice():
     while True:
-        user_selection = input("Please select your password strength (1) Strong (2) Medium (3) Weak:")
-        user_selection = int(user_selection)
+        user_selection = int(input("Please select your password strength (1) Strong (2) Medium (3) Weak:"))
+        # user_selection = int(user_selection)  # damnit man
         if user_selection not in [1, 2, 3]:
             print("Please enter a valid choice (1, 2 or 3)")
             continue
@@ -54,8 +56,8 @@ def gen_password(strength):
     for _ in range(0, gen_list['special']):
         rand_index = random.randint(0, len(special)-1)
         pw_as_list.append(special[rand_index])
-    pw_as_list.reverse()
-    random.shuffle(pw_as_list)
+    pw_as_list.reverse()  # FYI reverse is an in-place operation ;)
+    random.shuffle(pw_as_list)  # FYI shuffle is also an in-place operation
     return "".join(pw_as_list)
 
 

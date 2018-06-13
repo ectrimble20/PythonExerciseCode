@@ -13,21 +13,26 @@ I feel that this was a weak practice exercise
 """
 import random
 
-l_one = []
-l_two = []
+l_one = [random.randint(0, 100) for n in range(0, random.randrange(0, 20))]
+l_two = [random.randint(0, 100) for n in range(0, random.randrange(0, 20))]
 l_lgr = []
 l_sml = []
 l_unq = []
 
+"""
 for _ in range(0, random.randrange(0, 20)):
     l_one.append(random.randrange(1, 100))
 for _ in range(0, random.randrange(0, 20)):
     l_two.append(random.randrange(1, 100))
+"""
 # for the above, I'd probably just use a function in the real world rather than rewrite
+# list comprehensions are smarter for initializing lists
 
 print("L One: ", l_one)
 print("L Two: ", l_two)
 
+# this is kinda dumb, should really just test the two lists above and figure that out rather than
+# do this length check, although this isn't super critical or anything.
 if len(l_one) > len(l_two):
     l_lgr = l_one
     l_sml = l_two
